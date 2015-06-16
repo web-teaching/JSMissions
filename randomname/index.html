@@ -1,0 +1,116 @@
+<html>
+<head>
+
+<title>Warrior Name Generator</title>    
+<link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css'>
+	    
+<style>
+        
+    body {
+        background-image: url('old_moon.png');
+    }
+    
+    h1 {
+       font-family: 'Lobster', cursive;
+       font-size: 50px;
+       text-align: center;
+       color: DarkRed;
+       margin-bottom: 25px;
+       margin-top: 20px;
+    }
+    
+    p {
+	text-align: center;
+	font-family: 'Rokkitt', serif;
+	font-size: 60px;
+	color: white;
+    }
+	 
+    .tile {
+        background-image: url('red.png');
+        margin-left: auto;
+        margin-right: auto;
+	margin-bottom: 20px;
+        padding: 20px;
+        border: 1px solid white;
+        border-radius: 5px;
+        width: 500px;
+        height: 250px;
+    }
+    
+    .button {
+	border-radius:28px;
+	border: 1px solid #ab1919;
+	display: inline-block;
+	font-family: Arial;
+	font-size: 17px;
+	padding: 16px 31px;
+	background-color: white;
+	transition:.5s ease-in-out;
+    }
+    
+    .button:hover {
+	background-color: DarkRed;
+	color: white;
+    }
+    
+</style>
+
+<script>
+    
+        var firstName = new Array();
+            firstName[0] = "Alva";
+            firstName[1] = "Alvida";
+            firstName[2] = "Bjarke";
+            firstName[3] = "Brynjar";
+            firstName[4] = "Rose";
+	    firstName[5] = "Gerbold";
+            firstName[6] = "Bernar";
+            firstName[7] = "Eve";
+            firstName[8] = "Endre";
+            firstName[9] = "Gwynnestri";
+            firstName[10] = "Ryllae";
+            firstName[11] = "Tinesia";
+            firstName[12] = "Uiathen";
+	    
+        var lastName = new Array();
+            lastName[0] = "Unbreakable";
+            lastName[1] = "Forsaken";
+            lastName[2] = "Beast";
+            lastName[3] = "Brynjar";
+            lastName[4] = "Loving";
+	    lastName[5] = "Gerbold";
+            lastName[6] = "Defender";
+            lastName[7] = "Stubborn";
+            lastName[8] = "Undefeated";
+            lastName[9] = "Smiling";
+            lastName[10] = "Reckless";
+            lastName[11] = "Twisted";
+            lastName[12] = "Broken";
+	    
+    
+      function makeName() {
+            var randomNumber1 = Math.floor(Math.random() * 12);
+            var randomNumber2 = Math.floor(Math.random() * 12);
+	    var message =  firstName[randomNumber1] + " the " + lastName[randomNumber2] 
+            document.getElementById("name").innerHTML =  message;
+        }
+</script>
+</head>
+<body>
+
+    
+<h1>Warrior Name Generator</h1>
+
+    <div class="tile">
+	<p id="name"></p>
+    </div>
+
+    <div style="text-align:center;">
+        <button type="button" onclick="makeName()" class="button">Give me a warrior name</button>
+    </div>
+
+
+</body>
+</html>

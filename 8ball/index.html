@@ -1,0 +1,105 @@
+<html>
+<head>
+    
+    <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css'>
+    <title>Magic 8-Ball</title>
+       
+    <style>
+        
+    body {
+        background-image: url('images/stardust.png');
+    }
+    
+    h1 {
+       font-family: 'Cookie', cursive;
+       font-size: 75px;
+       text-align: center;
+       margin: 0;
+       color: white;
+    }
+    
+    p {
+        font-family: 'Rokkitt', serif;
+        text-align: center;
+        font-size: 30px;
+    }
+    
+    .ask {
+        margin-left:auto;
+        margin-right:auto;
+        text-align: center;
+        width: 300px;
+        margin-bottom: 20px;
+    }
+    
+    #answer {
+        color: white;
+        font-size: 60px;
+    }
+
+    .child {
+        display: inline-block;
+    }
+
+    
+    .tile {
+        background-image: url('images/zwartevilt.png');
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px;
+        border: 1px solid white;
+        border-radius: 5px;
+        width: 500px;
+        height: 200px;
+    }
+    
+    
+    </style>
+    
+    <script>
+        var messages = new Array();
+            messages[0] = "No";
+            messages[1] = "Not today";
+            messages[2] = "It is decidedly so";
+            messages[3] = "Without a doubt";
+            messages[4] = "Yes definitely";
+            messages[5] = "You may rely on it";
+            messages[6] = "As I see it yes";
+            messages[7] = "Most likely";
+            messages[8] = "Outlook good";
+            messages[9] = "Signs point to yes";
+            messages[10] = "Reply hazy try again";
+            messages[11] = "Ask again later";
+            messages[12] = "Better not tell you now";
+
+
+            
+        function displayFortune() {
+            var randomnumber = Math.floor(Math.random() * 13);
+            document.getElementById("answer").innerHTML =  messages[randomnumber];
+        }
+        
+  
+
+    </script>
+
+</head>
+<body>
+
+<h1>Magic 8 Ball</h1>
+
+<p>Ask the magic 8ball your question</p>
+
+    <div class="ask">
+        <input type="text" name="lname" size="35" class="child">
+        <button type="button" onclick="displayFortune()" class="child">Ask</button>
+    </div>
+
+    <div class="tile">
+        <p id="answer"></p>
+    </div>
+
+
+</body>
+</html>
