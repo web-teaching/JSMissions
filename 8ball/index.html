@@ -33,9 +33,44 @@
         margin-bottom: 20px;
     }
     
+    .inner-circle {
+        position: absolute;
+        top: 150px;
+        left: 150px;
+        height: 300px;
+        width: 300px;
+        border-radius: 50%;
+        background-color: rgb(35, 35, 39);
+        margin: 0;
+    }
+
     #answer {
+        font-size: 20px;
         color: white;
-        font-size: 60px;
+        position: absolute;
+        top: -150px;
+        left: -50px;
+        width: 100px;
+        margin: 0;
+    }
+
+    .triangle {
+        -webkit-transition: opacity 0.5s ease-in-out;
+        -moz-transition: opacity 0.5s ease-in-out;
+        transition: opacity 0.5s ease-in-out;
+        width: 0px;
+        height: 0px;
+        border-style: inset;
+        border-width: 173.2px 100px 0 100px;
+        border-color: #004bcc transparent transparent transparent;
+        float: left;
+        position: absolute;
+        left: 50px;
+        top: 80px;
+    }
+
+    .invisible {
+      opacity: 0;
     }
 
     .child {
@@ -43,15 +78,18 @@
     }
 
     
-    .tile {
+    .ball {
+        display: block;
+        position: relative;
         background-image: url('images/zwartevilt.png');
+        background: darkgray;
+        background: radial-gradient(circle at 50% 120%, #323232, #0a0a0a 80%, #121212 100%);
         margin-left: auto;
         margin-right: auto;
-        padding: 10px;
-        border: 1px solid white;
-        border-radius: 5px;
-        width: 500px;
-        height: 200px;
+        padding: 0;
+        border-radius: 50%;
+        width: 600px;
+        height: 600px;
     }
     
     
@@ -78,6 +116,12 @@
         function displayFortune() {
             var randomnumber = Math.floor(Math.random() * 13);
             document.getElementById("answer").innerHTML =  messages[randomnumber];
+            document.getElementById("triangle").classList.remove("invisible");
+            setTimeout(hideFortune, 3000);
+        }
+
+        function hideFortune() {
+            document.getElementById("triangle").classList.add("invisible");
         }
         
   
@@ -96,8 +140,12 @@
         <button type="button" onclick="displayFortune()" class="child">Ask</button>
     </div>
 
-    <div class="tile">
-        <p id="answer"></p>
+    <div class="ball">
+        <div class="inner-circle">
+            <div id="triangle" class="triangle invisible">
+                <p id="answer"></p>
+            </div>
+        </div>
     </div>
 
 
