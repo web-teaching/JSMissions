@@ -1,8 +1,8 @@
 <html>
 <head>
 
-    <link href='http://fonts.googleapis.com/css?family=Niconne' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css'>
+    <link href="http://fonts.googleapis.com/css?family=Niconne" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Rokkitt" rel="stylesheet" type="text/css">
     <title>Magic 8-Ball</title>
 
     <style>
@@ -94,29 +94,29 @@
             <p id="message"><span></span></p>
     </div>
 
-    <div style="text-align:center;">
-        <button type="button" onclick="displayFortune()" id="ask-button">Shake</button>
-    </div>
+    <center>
+        <button type="button" class="ask-button">Shake</button>
+    </center>
 
     <script>
         var messages = [];
-        messages[0] = "No";
-        messages[1] = "Not today";
-        messages[2] = "It is decidedly so";
-        messages[3] = "Without a doubt";
-        messages[4] = "Yes definitely";
-        messages[5] = "You may rely on it";
-        messages[6] = "As I see it yes";
-        messages[7] = "Most likely";
-        messages[8] = "Outlook good";
-        messages[9] = "Signs point to yes";
-        messages[10] = "Reply hazy try again";
-        messages[11] = "Ask again later";
-        messages[12] = "Better not tell you now";
+        messages[0] = 'No';
+        messages[1] = 'Not today';
+        messages[2] = 'It is decidedly so';
+        messages[3] = 'Without a doubt';
+        messages[4] = 'Yes definitely';
+        messages[5] = 'You may rely on it';
+        messages[6] = 'As I see it yes';
+        messages[7] = 'Most likely';
+        messages[8] = 'Outlook good';
+        messages[9] = 'Signs point to yes';
+        messages[10] = 'Reply hazy try again';
+        messages[11] = 'Ask again later';
+        messages[12] = 'Better not tell you now';
 
         function displayFortune() {
-            var randomnumber = Math.floor(Math.random() * 13);
-            document.getElementById("message").innerHTML =  messages[randomnumber];
+            var randomNumber = Math.floor(Math.random() * 13);
+            document.getbyid('message').innerHTML =  messages[randoNum];
         }
 
     </script>
@@ -127,8 +127,9 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
     <script type="text/javascript" language="javascript">
     $(document).ready(function() {
-        $("#ask-button").click(function(){
-            $(".container").effect("shake", {times: 3}, 800);
+        $('#ask-button').click(function(){
+            $('.container').effect('shake', {times: 3}, 800);
+            displayFortune();
         });
     });
     </script>
