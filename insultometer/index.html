@@ -1,16 +1,16 @@
 <html>
 <head>
-    
+
     <link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Rokkitt' rel='stylesheet' type='text/css'>
     <title>Insult Generator</title>
-       
+
     <style>
-        
+
     body {
         background-image: url('images/use_your_illusion.png');
     }
-    
+
     h1 {
        font-family: 'Cookie', cursive;
        font-size: 75px;
@@ -19,27 +19,27 @@
        margin-bottom: 5px;
        margin-top: 20px;
     }
-    
+
     p {
         font-family: 'Rokkitt', serif;
         text-align: center;
         font-size: 25px;
     }
-    
+
     #insult {
         font-size: 50px;
     }
-    
+
     .button {
         padding:20px;
         background-color: #dcdcdc;
         border: 1px solid #666;
         font-size: 15px;
-        
+
     }
 
 
-    
+
     .tile {
         background-color: aquamarine;
         margin-left: auto;
@@ -50,10 +50,10 @@
         width: 500px;
         height: 200px
     }
-    
-    
+
+
     </style>
-    
+
     <script>
         var messages = new Array();
             messages[0] = "You suck.";
@@ -66,13 +66,13 @@
             messages[7] = "You bring everyone joy when you leave.";
             messages[8] = "It's not me, it's you.";
             messages[9] = "You have dog breath.";
-            
-            
+
+
         function insultMe() {
             var randomnumber = Math.floor(Math.random() * 10);
             document.getElementById("insult").innerHTML =  messages[randomnumber];
         }
-         
+
     </script>
 
 </head>
@@ -83,7 +83,7 @@
     <div class="tile">
         <p id="insult"></p>
     </div>
-    
+
     <div style="text-align:center;">
         <button type="button" onclick="insultMe()" class="button">Hit Me</button>
     </div>
